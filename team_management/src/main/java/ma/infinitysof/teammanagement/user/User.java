@@ -1,11 +1,17 @@
 package ma.infinitysof.teammanagement.user;
 
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Getter @Setter
+@AllArgsConstructor @NoArgsConstructor
+@Entity @Table(name = "utilisateur")
 public class User {
     @Id
     @GeneratedValue(generator = "sequence-generator")
@@ -19,5 +25,9 @@ public class User {
             }
     )
     private Long id;
-
+    private String firstName;
+    private String lastName;
+    private String mobile;
+    private String email;
+    private String address;
 }
